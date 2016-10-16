@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0",
+  "authors": [
+    "Matt Mazur"
+  ],
+  "description": "Portfolio website for Matt Mazur",
+  "main": "gulpfile.js",
+  "keywords": [
+    "framework",
+    "angular",
+    "web",
+    "apps"
+  ],
+  "license": "MIT",
+  "homepage": "http://galacticnavigator.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-apps": "~1.2.0"
+  }
+}

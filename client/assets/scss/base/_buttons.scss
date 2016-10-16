@@ -1,0 +1,52 @@
+
+.mybutton {
+    display: inline-block;
+    overflow: hidden; 
+    padding: 1em;
+    text-decoration: none;
+    border: 0px solid white;
+    border-radius: $global-radius;
+    background-color: $primary-color;
+    color: white;
+    &:hover {
+        color: rgb(144, 208, 236);
+    }
+    &:visited {
+        color: white;
+    }
+}
+.mybutton-white {
+    @extend .mybutton;
+    background-color: white;
+    color: #000;
+    &:hover {
+        color: #fff;
+        background-color: $success-color;
+    }
+    &:visited {
+        color: #000;
+    }
+}
+
+.tinyButton {
+    height: 2.5rem;
+    padding: 0.5rem 0.8rem 0.8rem 0.8rem;  
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.paddedButton {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+@import "vendors/hover/options";
+@import "vendors/hover/mixins";
+@import "vendors/hover/hacks";
+
+@import "vendors/hover/effects/border-transitions/outline-out";
+@if $includeClasses {
+	.#{$nameSpace}-outline-out {
+		@include outline-out();
+	}
+}

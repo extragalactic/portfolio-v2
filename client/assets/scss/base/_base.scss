@@ -1,0 +1,103 @@
+
+// main styles found across site
+
+body {
+    background: white;
+    color: black;
+    -webkit-overflow-scrolling: touch;   
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+p {
+  font-family: 'Istok Web', sans-serif;
+  font-size: 1.0rem;
+  line-height: 1.1rem;
+}
+h1 {
+  font-family: 'Istok Web', sans-serif;
+}
+h3 {
+  font-family: 'Istok Web', sans-serif;
+}
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.0em;
+  font-style: italic;
+}
+h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;  
+}
+h6 {
+  font-weight: bold;
+}
+hr.style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.3);
+}
+
+.breadcrumbFormat {
+  margin-left: 20px;
+}
+
+.roundedImage {
+  border: 1px solid black;
+  border-radius: $global-radius;
+  box-shadow: 3px 3px 3px #222;
+  padding: 5px;
+}
+
+.profileImage {
+  @extend .roundedImage;
+  margin-bottom: 15px;
+}
+.miniProfileImage {
+  @extend .profileImage;
+  width: 120px;
+  float: left;
+  margin-right: 15px;
+
+}
+
+.row {
+    background: white;
+}
+
+#sidebar {
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+#topTitleBar {
+  background: #000;
+}
+.titleBarText {
+  color: #fff;
+}
+.titleBarIcon {
+  width: 15px;
+  margin-top: -0.3rem;
+}
+
+.mainArea {
+    padding-left: 15px;
+      padding-left: 0;
+      padding-right: 0;    
+}
+
+.mainSubTitle {
+  padding-left: 7px;  
+}
+
+.contentText {
+  overflow-y: hidden;
+}
+
+.insetContent {
+    padding-left: 5px; 
+    padding-right: 15px; 
+}
+
+

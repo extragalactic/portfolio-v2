@@ -1,0 +1,11 @@
+@import "settings";
+@import "foundation";
+
+// Import my SCSS files
+@import 'base/base';
+@import 'base/buttons';
+
+@import 'pages/root';
+@import 'pages/main';
+@import 'pages/projects';
+@import 'pages/header-footer';

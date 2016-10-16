@@ -1,0 +1,42 @@
+---
+name: project
+url: /project/:projectId
+controller: ProjectCtrl
+---
+
+<div class="vertical grid-block">
+
+  <div class="grid-block">
+    <div class="grid-content">
+      <a href="./index.html" class="mybutton-white tinyButton hvr-outline-out"><h5>Project List</h5></a>
+    </div>
+  </div>
+
+  <div class="grid-block" id="projectDetailsMain">
+    <div class="grid-content">
+
+      <img class="roundedImage projectMainImage" src="{{imageURL}}">
+
+      <!-- try out Owl Carousel 
+      <ul class="imageCarousel" data-orbit>
+        <li><img class="roundedImage projectMainImage" src="assets/img/projects/project-galaxy-browser.jpg" /></li>
+        <li><img class="roundedImage projectMainImage" src="assets/img/projects/project-multiverse.jpg" /></li>
+        <li><img class="roundedImage projectMainImage" src="assets/img/projects/project-sigma1.jpg" /></li>
+      </ul>
+      -->
+      <h3>{{projectName}}</h3>
+
+      <p class="contentText">{{description}}</p>
+      <h5>(Category: {{category}})</h5>
+      <h4>Created with:
+        <span ng-repeat="name in technologies">{{name}}{{$last ? '':', '}}</span>
+      </h4>
+      <div id="websiteButton">
+        <a href="{{websiteURL}}" target="_blank" class="mybutton hvr-outline-out">Website</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

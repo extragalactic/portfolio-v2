@@ -1,0 +1,32 @@
+
+#mainContactContainer {
+	margin: auto;
+	padding-bottom: 20px;
+}
+
+#innerContactContainer {
+	margin-left: 10px;
+
+	.newline {
+	  clear: both;
+	}
+}
+
+.thumbnailText {
+    padding-left: 5px;
+    padding-bottom: 5px;
+    margin-top: 7px;
+}
+
+.thumbRowPadding {
+    padding-right: 5px;
+    margin-left: -10px;
+}
+
+.thumbnail {
+	margin-top: 5px;
+}
+
+#downloadResumeLine {
+	margin: 15px 0px 35px 0px;
+}

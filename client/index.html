@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio of Matt Mazur</title>
+
+    <!-- CSS -->
+    <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
+    
+    <!-- Javascript -->
+    <script src="./assets/js/foundation.js"></script>
+    <script src="./assets/js/templates.js"></script>
+    <script src="./assets/js/routes.js"></script>
+    <script src="./lib/preloadjs/preloadjs-0.6.2.min.js"></script>    
+    <script src="./assets/js/app.js"></script>
+  </head>
+
+  <body ng-controller="RootCtrl">
+
+    <div class="grid-frame">
+      <div class="grid-block">
+
+            <div class="grid-block" id="hideBeforeLoad">
+              <zf-panel id="sidebar" position="left" class="medium-grid-block medium-12">
+                <grid-block>
+                  <grid-content>
+                   <img src="{{bioPhoto}}" class="profileImage"> 
+                    <h3>Matt Mazur</h3>
+                    <p class="contentText">{{bioText}}</p>
+                  </grid-content>
+                </grid-block>
+              </zf-panel>
+            </div>
+
+            <div class="grid-block medium-9">
+              <div class="mainArea">
+                <div class="title-bar hide-for-medium" id="topTitleBar">
+                  <div class="title-bar-left">
+                    <img class="titleBarIcon" src="assets/img/user-icon-white.png" /></a>
+                    <a href="#"><span class="titleBarText">Matt Mazur</span></a>
+                  </div>
+                </div>
+                <div id="top-title">
+                  <div class="row column">
+                    <img src="assets/img/main-title-dark-1.png" />
+                    <p class="lead mainSubTitle">The online portfolio of Matt Mazur.</p>
+                  </div>
+                </div>
+
+                <div ui-view  class="insetContent"></div>
+
+              </div>
+          </div>
+      </div>
+    </div>
+
+  </body>
+</html>
