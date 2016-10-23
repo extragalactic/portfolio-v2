@@ -11,6 +11,9 @@ var gulp     = require('gulp');
 var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
+var browserify = require('browserify');
+var source   = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -31,7 +34,7 @@ var paths = {
   ],
   // These files include Foundation for Apps, its dependencies, and other Bower components
   foundationJS: [
-    'bower_components/jquery/dist/jquery.js',
+   // 'bower_components/jquery/dist/jquery.js',
     'bower_components/fastclick/lib/fastclick.js',
     'bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js',
     'bower_components/tether/tether.js',
@@ -40,18 +43,19 @@ var paths = {
     'bower_components/angular-animate/angular-animate.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/foundation-apps/js/vendor/**/*.js',
-    'bower_components/foundation-apps/js/angular/**/*.js',
+    'bower_components/foundation-apps/js/angular/**/*.js', 
     '!bower_components/foundation-apps/js/angular/app.js'
   ],
   // These files are for your app's JavaScript
   appJS: [
-    'client/assets/js/app.js',
+    'client/assets/js/app-bundle.js',
     'client/assets/js/controllers/*.js'
   ]
 }
 
 // 3. TASKS
 // - - - - - - - - - - - - - - -
+
 
 // Cleans the build directory
 gulp.task('clean', function(cb) {
@@ -133,7 +137,10 @@ gulp.task('uglify:foundation', function(cb) {
   ;
 });
 
-gulp.task('uglify:app', function() {
+  // ************ ************** *************** *********** ************
+
+
+gulp.task('uglify:app', ['browserify'], function() {
   var uglify = $.if(isProduction, $.uglify()
     .on('error', function (e) {
       console.log(e);
@@ -144,6 +151,15 @@ gulp.task('uglify:app', function() {
     .pipe($.concat('app.js'))
     .pipe(gulp.dest('./build/assets/js/'))
   ;
+});
+
+// run Browserify to add "require" modules
+gulp.task('browserify', function() {
+    return browserify('./client/assets/js/app.js')
+        .bundle()
+        .pipe(source('app-bundle.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest('./client/assets/js'));
 });
 
 // Starts a test server, which you can view at http://localhost:8079
@@ -161,7 +177,7 @@ gulp.task('server', ['build'], function() {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
-  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], 'copy:templates', cb);
+  sequence('clean', 'browserify', ['copy', 'copy:foundation', 'sass', 'uglify'], 'copy:templates', cb);
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change

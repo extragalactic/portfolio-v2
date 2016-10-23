@@ -1,6 +1,6 @@
 (function() {
 'use strict';
-angular.module('app').controller('ProjectCtrl', function($scope, $state, $stateParams, $document, appVars) {
+angular.module('app').controller('ProjectCtrl', ['$scope', '$state', '$stateParams', '$document', 'appVars', function($scope, $state, $stateParams, $document, appVars) {
 
    var projectID;
    loadData();
@@ -30,5 +30,5 @@ angular.module('app').controller('ProjectCtrl', function($scope, $state, $stateP
      return arr[0];
    }
 
-});
+}]);
 })();

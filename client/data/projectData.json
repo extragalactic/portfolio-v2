@@ -75,7 +75,7 @@
       "websiteURL":"http://www.galaxyclass.org/multiverse/",
       "technologies": ["TouchDesigner", "Python"],
       "tools": [],
-      "description":"Multiverse is a galactic astronomy map and creative visualization program I created with TouchDesigner software and Python scripts. The project was covered in an August 2014 story in the Globe and Mail newspaper."
+      "description":"Multiverse is a galactic astronomy map and creative visualization program I created with TouchDesigner software. The project was covered in an August 2014 story in the Globe and Mail newspaper."
     }
   ]
 }
